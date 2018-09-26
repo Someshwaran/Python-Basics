@@ -1,0 +1,58 @@
+///////////////////////////////////////////Python///////////////////////////////////////////////////////////////////////////
+operatos------
+    arithmetic
+    logical
+    bitwise
+    special operatos
+//////////////////////////////////////
+Contorlstatements
+    if
+    elif
+    else
+    for in range
+    while
+
+////////////////////////////////////////
+String method 
+    format()
+    isalnum()
+    isalpha()
+    isdigit()
+    isnumeric()
+    isdecimal()
+    reversed()
+    center()
+    ljust()
+    rjust()
+////////////////////////////////////
+dataStructures
+    list
+    dictionary
+
+///////////////////////////////////////
+iterations
+    Genarators
+
+    Exceptions
+///////////////////////////////////////
+documentions
+    doc strings
+    single line cmd
+    Class and file , module (file) 
+/////////////////////////////////////////
+Libraries 
+    decimal
+    re
+    textwrap
+////////////////////////////////////////
+User defined method
+    return multiple statements 
+///////////////////////////////////////
+Documentation for Whole Language : PEP 8, PEP 3119(Abstract Class)
+
+////////////////////////////////////////
+Oops
+    private members and functions
+    Class ---
+    ABC 
+

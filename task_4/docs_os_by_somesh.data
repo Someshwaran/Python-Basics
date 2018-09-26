@@ -1,0 +1,50 @@
+ os.system(command)
+ 	"It direclty execute the commands in the subshell of the os where it's the program running. it simply uses the C standard libaries System() os that it has limitations also depends on the os for Unix and Windows based. "
+ 							-- Somesh C K
+
+ 							
+    Execute the command (a string) in a subshell. This is implemented by calling the Standard C function system(), and has the same limitations. Changes to sys.stdin, etc. are not reflected in the environment of the executed command. If command generates any output, it will be sent to the interpreter standard output stream.
+
+    On Unix, the return value is the exit status of the process encoded in the format specified for wait(). Note that POSIX does not specify the meaning of the return value of the C system() function, so the return value of the Python function is system-dependent.
+
+    On Windows, the return value is that returned by the system shell after running command. The shell is given by the Windows environment variable COMSPEC: it is usually cmd.exe, which returns the exit status of the command run; on systems using a non-native shell, consult your shell documentation.
+
+os.scandir(path='.')
+
+	" It worked as based on the os where the is executed is that depends on it because it uses the relevant API For Unix it uses the open source opendir() and readdir() and similarly for the Windows it uses the  Win32 FindFirstFileW and FindNextFileW functions ."
+										--Somesh C K 
+
+    Return an iterator of os.DirEntry objects corresponding to the entries in the directory given by path. The entries are yielded in arbitrary order, and the special entries '.' and '..' are not included.
+
+    Using scandir() instead of listdir() can significantly increase the performance of code that also needs file type or file attribute information, because os.DirEntry objects expose this information if the operating system provides it when scanning a directory. 
+
+    All os.DirEntry methods may perform a system call, but is_dir() and is_file() usually only require a system call for symbolic links; os.DirEntry.stat() always requires a system call on Unix but only requires one for symbolic links on Windows.
+
+    path may be a path-like object. If path is of type bytes (directly or indirectly through the PathLike interface), the type of the name and path attributes of each os.DirEntry will be bytes; in all other circumstances, they will be of type str.
+
+    This function can also support specifying a file descriptor; the file descriptor must refer to a directory.
+
+    The scandir() iterator supports the context manager protocol and has the following method:
+
+    scandir.close()
+
+        Close the iterator and free acquired resources.
+
+        This is called automatically when the iterator is exhausted or garbage collected, or when an error happens during iterating. However it is advisable to call it explicitly or use the with statement.
+
+        New in version 3.6.
+
+    The following example shows a simple use of scandir() to display all the files (excluding directories) in the given path that don’t start with '.'. The entry.is_file() call will generally not make an additional system call:
+
+    with os.scandir(path) as it:
+        for entry in it:
+            if not entry.name.startswith('.') and entry.is_file():
+                print(entry.name)
+
+    Note
+
+    On Unix-based systems, scandir() uses the system’s opendir() and readdir() functions. On Windows, it uses the Win32 FindFirstFileW and FindNextFileW functions.
+
+    New in version 3.5.
+
+    New in version 3.6: Added support for the context manager protocol and the close() method. If a scandir() iterator is neither exhausted nor explicitly closed a ResourceWarning will be emitted in its destructor.
