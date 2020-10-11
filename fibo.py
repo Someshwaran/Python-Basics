@@ -1,4 +1,4 @@
-# this fibo potimal recursive function 
+# this fibo optimal recursive function 
 def fibononic(avalue , bvalue, nthvalue):
 	# here we print the avalue 
 	print(avalue, end=' ')
