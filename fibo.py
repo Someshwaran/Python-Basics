@@ -1,27 +1,18 @@
-def Fibonnoic():
-     #variables for the fibonnoic series 
-     variable_a = 0
-     variable_b = 1
+# this fibo potimal recursive function 
+def fibononic(avalue , bvalue, nthvalue):
+	# here we print the avalue 
+	print(avalue, end=' ')
+	if nthvalue <2:
+		return None
+	cvalue = avalue + bvalue
+	fibononic(bvalue, cvalue, nthvalue-1)
 
-     #loop to generate the series  
-     while True:
-         if variable_a != 0:
-             check_variable = input('Press Enter for next value or to End give any Value')
-             #checking for the next value input
-             if check_variable != '':   
-                 break
-         print(variable_a,end=' ')
-         # here the main logic of Fibonnoic series 
-         variable_c = variable_a + variable_b   
-         variable_a = variable_b
-         variable_b = variable_c 
-          
-# main method 
 def main():
-    #function calling 
-    Fibonnoic()     
+	# this main driver method called the fibononic function 
+	# this program generate the fibonoic series in the optimal way of using 
+	# the space the stack and running time efficiently  
+	nthvalue = input("Enter the total number of fibononic series to generate :> ")
+	fibononic(0,1,int(nthvalue))
 
-#main module starts here
-if __name__ == '__main__' :
-    main()
- 
+if __name__ == '__main__':
+	main()
